@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-// Importa o componente dinamicamente por usar window/canvas
+// Corrige o uso de window/canvas no SSR
 const RoletaCanvas = dynamic(() => import("../components/RoletaCanvas"), {
   ssr: false,
 });
