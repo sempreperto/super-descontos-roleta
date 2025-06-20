@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-// Importa o componente da roleta (import dinâmico por causa do uso de window e canvas)
+// Importa o componente dinamicamente por usar window/canvas
 const RoletaCanvas = dynamic(() => import("../components/RoletaCanvas"), {
   ssr: false,
 });
