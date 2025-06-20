@@ -1,10 +1,11 @@
-"use client"; // obrigatório se você usa App Router – não se aplica aqui
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function RoletaCanvas() {
   useEffect(() => {
-    // Carrega script de Winwheel
     const script = document.createElement("script");
     script.src = "/libs/Winwheel.min.js";
     script.onload = () => {
@@ -41,12 +42,7 @@ export default function RoletaCanvas() {
 
   return (
     <div className="flex flex-col items-center mt-8">
-      <canvas
-        id="roletaCanvas"
-        width="400"
-        height="400"
-        className="mb-4"
-      ></canvas>
+      <canvas id="roletaCanvas" width="400" height="400" className="mb-4" />
       <button
         onClick={() =>
           (window as any).Winwheel?.getInstance()?.startAnimation()
