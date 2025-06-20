@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Adicione este bloco à sua configuração do Next.js
   eslint: {
-    // Ignora erros de ESLint durante o build na Vercel
+    // Aviso: Isso permite que builds de produção sejam concluídos com sucesso,
+    // mesmo que seu projeto tenha erros de ESLint. É altamente recomendável
+    // corrigir os erros em vez de desabilitar esta verificação.
     ignoreDuringBuilds: true,
   },
 };
