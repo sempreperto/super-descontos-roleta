@@ -12,7 +12,8 @@ export default function RoletaCanvas() {
       const Winwheel = (window as any).Winwheel;
       if (!Winwheel) return;
 
-      new Winwheel({
+      // Cria a roleta e guarda em window.myWheel
+      (window as any).myWheel = new Winwheel({
         canvasId: "roletaCanvas",
         numSegments: 8,
         outerRadius: 170,
@@ -40,13 +41,18 @@ export default function RoletaCanvas() {
     document.body.appendChild(script);
   }, []);
 
+  const handleGirar = () => {
+    const wheel = (window as any).myWheel;
+    if (wheel) {
+      wheel.startAnimation();
+    }
+  };
+
   return (
     <div className="flex flex-col items-center mt-8">
       <canvas id="roletaCanvas" width="400" height="400" className="mb-4" />
       <button
-        onClick={() =>
-          (window as any).Winwheel?.getInstance()?.startAnimation()
-        }
+        onClick={handleGirar}
         className="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600 transition"
       >
         Girar Roleta
